@@ -47,7 +47,7 @@ A simple and responsive Product Listing application built with **Next.js** and *
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/nishandutta/product-app
+git clone https://github.com/nishandutta/product-app.git
 cd product-app
 ```
 
