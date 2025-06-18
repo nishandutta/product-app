@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Gaming Keyboard",
+    "price": 1299,
+    "imageUrl": "/product-images/keyboard.jpg",
+    "category": "Electronics"
+  },
+  {
+    "id": 2,
+    "name": "Play Book",
+    "price": 699,
+    "imageUrl": "/product-images/playbook.jpg",
+    "category": "Education"
+  },
+  {
+    "id": 3,
+    "name": "Avacado",
+    "price": 1299,
+    "imageUrl": "/product-images/avacado.jpg",
+    "category": "Food"
+  },
+  {
+    "id": 4,
+    "name": "T-Shirt",
+    "price": 499,
+    "imageUrl": "/product-images/tshirt.jpg",
+    "category": "Apparel"
+  },
+  {
+    "id": 1750285532989,
+    "name": "yay",
+    "price": 234,
+    "imageUrl": "/avacado.jpg",
+    "category": "Food"
+  }
+]
