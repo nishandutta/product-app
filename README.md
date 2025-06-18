@@ -47,7 +47,7 @@ A simple and responsive Product Listing application built with **Next.js** and *
 ### 1. Clone the repo
 
 ```bash
-git clone [https://github.com/your-username/product-listing-app.git](https://github.com/nishandutta/product-app)
+git clone https://github.com/nishandutta/product-app
 cd product-app
 ```
 
@@ -102,10 +102,3 @@ Deletes a product by ID.
 - ❗ Data is stored in `data/products.json`. This approach is ideal for demo or small-scale internal tools.
 
 ---
-
----
-
-## 📄 License
-
-MIT License  
-© 2025 Your Name
