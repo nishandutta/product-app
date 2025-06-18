@@ -47,8 +47,8 @@ A simple and responsive Product Listing application built with **Next.js** and *
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/product-listing-app.git
-cd product-listing-app
+git clone [https://github.com/your-username/product-listing-app.git](https://github.com/nishandutta/product-app)
+cd product-app
 ```
 
 ### 2. Install dependencies
@@ -100,17 +100,8 @@ Deletes a product by ID.
 ## 📝 Notes
 
 - ❗ Data is stored in `data/products.json`. This approach is ideal for demo or small-scale internal tools.
-- 🔐 For real-world apps, consider moving to a database like MongoDB, PostgreSQL, or Firebase.
 
 ---
-
-## ✨ Future Improvements
-
-- [ ] Edit/Update product support
-- [ ] Image file uploads
-- [ ] Pagination / Infinite scroll
-- [ ] Unit tests (Jest / React Testing Library)
-- [ ] PWA support
 
 ---
 
