@@ -12,5 +12,5 @@ export interface ProductCardType {
 }
 
 export interface AddProductCardType {
-  onProductAdded: () => void
+  onProductAdded: (newProduct?: any) => void
 }

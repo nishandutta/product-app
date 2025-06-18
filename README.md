@@ -70,10 +70,13 @@ Visit [http://localhost:3000/products](http://localhost:3000/products) in your b
 ## 🔌 API Endpoints
 
 ### `GET /api/products`
+
 Returns the list of all products.
 
 ### `POST /api/products`
+
 Adds a new product. Requires:
+
 ```json
 {
   "name": "Product Name",
@@ -84,6 +87,7 @@ Adds a new product. Requires:
 ```
 
 ### `DELETE /api/products/:id`
+
 Deletes a product by ID.
 
 ---
@@ -100,5 +104,8 @@ Deletes a product by ID.
 ## 📝 Notes
 
 - ❗ Data is stored in `data/products.json`. This approach is ideal for demo or small-scale internal tools.
+- ❗ Modification of files using fs.writeFile() or require() doesn't won’t work on any read-only production environment
+- For that purpose using database or local storage is essential.
+- For temp basis data add and delete is added in production for now
 
 ---

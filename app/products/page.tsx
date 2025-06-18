@@ -26,9 +26,14 @@ export default function ProductsPage() {
     setIsLoading(false)
   }
 
-  const handleProductAdded = () => {
-    fetchProducts()
-    setShowForm(false)
+  const handleProductAdded = (newProduct?: ProductsType) => {
+    if (newProduct) {
+      setProducts((prev) => [...prev, newProduct])
+      setShowModal(false)
+    } else {
+      fetchProducts()
+      setShowModal(false)
+    }
   }
 
   const handleDelete = (id: string) => {

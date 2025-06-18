@@ -2,7 +2,6 @@ import { getAllProducts } from '@/lib/productStore'
 import Link from 'next/link'
 
 export default function ProductDetailPage({ params }: any) {
-  console.log('params', params)
   const productId = parseInt(params.id)
   const products = getAllProducts()
   const product = products.find((p: any) => p.id === productId)

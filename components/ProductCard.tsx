@@ -10,22 +10,26 @@ export default function ProductCard({ product, onDelete }: ProductCardType) {
     const confirmed = confirm(`Delete ${product.name}?`)
     if (!confirmed) return
 
-    try {
-      const res = await fetch(`/api/products/${product.id}`, {
-        method: 'DELETE',
-      })
+    if (process.env.NODE_ENV === 'production') {
+      onDelete(product.id)
+    } else {
+      try {
+        const res = await fetch(`/api/products/${product.id}`, {
+          method: 'DELETE',
+        })
 
-      if (res.ok) {
-        onDelete(product.id)
-        toast.success('Product deleted')
-      } else {
-        const error = await res.json()
-        console.error('Delete failed:', error)
-        toast.error(error?.error || 'Failed to delete product')
+        if (res.ok) {
+          onDelete(product.id)
+          toast.success('Product deleted')
+        } else {
+          const error = await res.json()
+          console.error('Delete failed:', error)
+          toast.error(error?.error || 'Failed to delete product')
+        }
+      } catch (err) {
+        console.error('API error:', err)
+        toast.error('Failed to delete product')
       }
-    } catch (err) {
-      console.error('API error:', err)
-      toast.error('Failed to delete product')
     }
   }
 

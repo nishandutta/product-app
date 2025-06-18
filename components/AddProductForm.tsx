@@ -32,26 +32,35 @@ export default function AddProductForm({ onProductAdded }: AddProductCardType) {
       return
     }
 
-    const res = await fetch('/api/products', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: formData.name,
-        price: Number(formData.price),
-        imageUrl: formData.imageUrl,
-        category:
-          formData.category[0].toUpperCase() +
-          formData.category.slice(1).toLowerCase(),
-      }),
-    })
+    const newProduct = {
+      id: Date.now(), // or UUID
+      name: formData.name,
+      price: Number(formData.price),
+      imageUrl: formData.imageUrl,
+      category: formData.category,
+    }
 
-    const newProduct = await res.json()
-    if (res.ok) {
-      toast.success('Product added!')
-      onProductAdded()
+    if (process.env.NODE_ENV === 'production') {
+      // 🟡 Fake add in production
+      toast.success('Product added (not saved)')
+      onProductAdded(newProduct) // ⬅️ pass new product object
       setFormData({ name: '', price: '', imageUrl: '', category: '' })
     } else {
-      toast.error(newProduct.error || 'Failed to add product')
+      // ✅ Real API call in development
+      const res = await fetch('/api/products', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newProduct),
+      })
+
+      const added = await res.json()
+      if (res.ok) {
+        toast.success('Product added!')
+        onProductAdded()
+        setFormData({ name: '', price: '', imageUrl: '', category: '' })
+      } else {
+        toast.error(added.error || 'Failed to add product')
+      }
     }
 
     setLoading(false)
