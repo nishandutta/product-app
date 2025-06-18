@@ -26,12 +26,5 @@
     "price": 499,
     "imageUrl": "/product-images/tshirt.jpg",
     "category": "Apparel"
-  },
-  {
-    "id": 1750285532989,
-    "name": "yay",
-    "price": 234,
-    "imageUrl": "/avacado.jpg",
-    "category": "Food"
   }
 ]
